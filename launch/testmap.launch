@@ -1,0 +1,18 @@
+<launch>
+     <!-- Tham số cho Gazebo -->
+     <arg name="world_name" default="$(find six)/worlds/testmap.world" />
+     <arg name="paused" default="false" />
+     <arg name="use_sim_time" default="true" />
+     <arg name="gui" default="true" />
+     <arg name="headless" default="false" />
+     <arg name="debug" default="false" />
+
+     <!-- Khởi động Gazebo với testmap.world -->
+     <node name="gazebo" pkg="gazebo_ros" type="gazebo_world" respawn="false" output="screen"
+           args="-u $(arg paused) $(arg world_name)">
+       <param name="use_sim_time" value="$(arg use_sim_time)" />
+     </node>
+
+     <!-- Khởi động GUI Gazebo (nếu bật) -->
+     <node if="$(arg gui)" name="gazebo_gui" pkg="gazebo_ros" type="gazebo_gui" respawn="false" output="screen" />
+   </launch>

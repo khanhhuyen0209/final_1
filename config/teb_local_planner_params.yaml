@@ -1,0 +1,8 @@
+base_local_planner: teb_local_planner/TEBLocalPlanner
+teb_local_planner:
+  max_vel_x: 0.5  # Max linear velocity (m/s)
+  max_vel_y: 0.0  # Max lateral velocity (m/s)
+  max_vel_theta: 1.0  # Max angular velocity (rad/s)
+  acc_lim_x: 2.5  # Max linear acceleration (m/s^2)
+  acc_lim_theta: 3.2  # Max angular acceleration (rad/s^2)
+  min_turning_radius: 0.2  # Minimum turning radius (m)
